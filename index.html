@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dự Án Mẫu 1</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- main: có ngữ nghĩa là phần chính của website -->
+    <main>
+      <!-- header -->
+      <header class="header fixed">
+        <div class="main-content">
+          <div class="body-header">
+            <!-- Logo -->
+            <a href="#">
+              <img
+                src="assets/img/reshot-icon-foursquare-TQ4W9MDN3L.svg"
+                width="30px"
+                alt="logo"
+                class="logo"
+            /></a>
+            <!-- navbar -->
+            <nav class="nav">
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Courses</a>
+                </li>
+                <li>
+                  <a href="#">Pricing</a>
+                </li>
+                <li>
+                  <a href="#">Reviews</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- btn-action -->
+            <div class="btn-action">
+              <!-- 
+            Do có nhiều nút nên có thể dùng nhiều class
+            btn là class chung
+            btn-sigup là class cho từng nút cần chỉnh 
+            -->
+              <a href="#" class="btn btn-signup">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ====hero===== -->
+      <div class="hero">
+        <!-- main-content là class chung đã được css chiều rộng cố định -->
+        <div class="main-content">
+          <div class="body-hero">
+            <!-- hero left bên trái -->
+            <div class="media-block">
+              <img
+                src="assets/img/pexels-hardeep-33084053.jpg"
+                alt="ảnh jpg"
+                class="img"
+              />
+              <div class="hero-sum">
+                <!-- item 1 -->
+                <div class="item">
+                  <div class="icon">
+                    <i class="fa-brands fa-web-awesome"></i>
+                  </div>
+                  <div class="info">
+                    <p class="label">20 Courses</p>
+                    <p class="title">UI/UX Desgin</p>
+                  </div>
+                </div>
+                <!-- item 2 -->
+                <div class="item">
+                  <div class="icon">
+                    <i class="fa-brands fa-twitch"></i>
+                  </div>
+                  <div class="info">
+                    <p class="label">20 Courses</p>
+                    <p class="title">Development</p>
+                  </div>
+                </div>
+                <!-- item 3 -->
+                <div class="item">
+                  <div class="icon">
+                    <i class="fa-brands fa-medium"></i>
+                  </div>
+                  <div class="info">
+                    <p class="label">20 Courses</p>
+                    <p class="title">Marketing</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- hero right bên phải -->
+            <div class="content-block">
+              <h1 class="heading">Learn without limits and spread knowledge</h1>
+              <p class="desc">
+                Build new skills for that "This is my year " feeling with course
+                , certificates, and degrees from word-class unniversities and
+                companies.
+              </p>
+              <div class="cta-gr">
+                <a href="#" class="btn btn-seecourse">See Course</a>
+                <button class="watch-video">
+                  <div class="icon">
+                    <i class="fa-solid fa-caret-right"></i>
+                  </div>
+                  <p class="text">Wacth Video</p>
+                </button>
+              </div>
+              <p class="desc desc-recent">Recent engagement</p>
+              <p class="desc desc-strong">
+                <strong>50K</strong> Student <strong>70+</strong> Courses
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ====popular===== -->
+      <div class="popular">
+        <div class="main-content">
+          <!-- ======popular-top=============== -->
+          <div class="popular-top">
+            <div class="info">
+              <h2 class="heading-lv2">Our pupolar course</h2>
+              <p class="desc desc-size">
+                Build new skills with new trendy courses and shine for the next
+                future career
+              </p>
+            </div>
+            <div class="control">
+              <button class="btn-control">
+                <i class="fa-solid fa-angle-left"></i></button
+              ><button class="btn-control">
+                <i class="fa-solid fa-angle-right"></i>
+              </button>
+            </div>
+          </div>
+          <!-- ============popular-list============= -->
+          <div class="popular-list">
+            <div class="course-list">
+              <!-- item 1 -->
+              <div class="course-item">
+                <a href="#">
+                  <img
+                    src="assets/img/glenn-carstens-peters-npxXWgQ33ZQ-unsplash.jpg"
+                    alt="learn"
+                    class="thumb"
+                /></a>
+                <div class="info">
+                  <div class="head">
+                    <h3 class="title"><a href="#">Basic Web Desgin</a></h3>
+                    <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+                  </div>
+                  <p class="desc">
+                    Get the best course, gain knokledge and shine for your
+                    future carreer
+                  </p>
+                  <div class="foot-info">
+                    <strong>$120.75</strong>
+                    <button class="btn btn-booknow">Book Now</button>
+                  </div>
+                </div>
+              </div>
+              <!-- item 2 -->
+              <div class="course-item">
+                <a href="#">
+                  <img
+                    src="assets/img/nick-morrison-FHnnjk1Yj7Y-unsplash.jpg"
+                    alt="learn"
+                    class="thumb"
+                /></a>
+                <div class="info">
+                  <div class="head">
+                    <h3 class="title"><a href="#">UI/UX Desgin</a></h3>
+                    <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+                  </div>
+                  <p class="desc">
+                    Get the best course, gain knokledge and shine for your
+                    future carreer
+                  </p>
+                  <div class="foot-info">
+                    <strong>$120.75</strong>
+                    <button class="btn btn-booknow">Book Now</button>
+                  </div>
+                </div>
+              </div>
+              <!-- item 3 -->
+              <div class="course-item">
+                <a href="#">
+                  <img
+                    src="assets/img/unseen-studio-s9CC2SKySJM-unsplash.jpg"
+                    alt="learn"
+                    class="thumb"
+                /></a>
+                <div class="info">
+                  <div class="head">
+                    <h3 class="title"><a href="#">Web App Desgin</a></h3>
+                    <div class="rating"><i class="fas fa-star"></i> 4.5</div>
+                  </div>
+                  <p class="desc">
+                    Get the best course, gain knokledge and shine for your
+                    future carreer
+                  </p>
+                  <div class="foot-info">
+                    <strong>$120.75</strong>
+                    <button class="btn btn-booknow">Book Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========feedback================== -->
+      <div class="feeback">
+        <div class="main-content">
+          <div class="feedback-list">
+            <!-- item 1 -->
+            <div class="feedback-item">
+              <!-- Khối trái -->
+              <div class="info-feedback">
+                <img
+                  src="assets/img/venrick-azcueta-17qa33WJ6zI-unsplash.jpg"
+                  alt="user"
+                  class="img-feed"
+                />
+                <p class="member-name">Peter Moor</p>
+                <p class="desc">Student of Web Desgin</p>
+                <div class="dots">
+                  <div class="dot active">.</div>
+                  <div class="dot">.</div>
+                  <div class="dot">.</div>
+                </div>
+              </div>
+              <!-- Khối phải -->
+              <div class="content-feed">
+                <div class="icon"><i class="fas fa-quote-left"></i></div>
+                <!-- blockquote: Là đoạn trích dẫn -->
+                <blockquote>
+                  Not only does my resume look impressive-filled with the names
+                  and logos of world-class insitutions-but these certificates
+                  also bring me closer to my career goals by validating the
+                  skills i've learned."
+                </blockquote>
+              </div>
+            </div>
+            <!-- item 2 -->
+            <div class="feedback-item">
+              <!-- Khối trái -->
+              <div class="info-feedback">
+                <img
+                  src="assets/img/premium_photo-1671656349322-41de944d259b.avif"
+                  alt="user"
+                  class="img-feed"
+                />
+                <p class="member-name">Peter Moor</p>
+                <p class="desc">Student of Web Desgin</p>
+                <div class="dots">
+                  <div class="dot">.</div>
+                  <div class="dot active">.</div>
+                  <div class="dot">.</div>
+                </div>
+              </div>
+              <!-- Khối phải -->
+              <div class="content-feed">
+                <div class="icon"><i class="fas fa-quote-left"></i></div>
+                <!-- blockquote: Là đoạn trích dẫn -->
+                <blockquote>
+                  Not only does my resume look impressive-filled with the names
+                  and logos of world-class insitutions-but these certificates
+                  also bring me closer to my career goals by validating the
+                  skills i've learned."
+                </blockquote>
+              </div>
+            </div>
+            <!-- item 3 -->
+            <div class="feedback-item">
+              <!-- Khối trái -->
+              <div class="info-feedback">
+                <img
+                  src="assets/img/photo-1633332755192-727a05c4013d.avif"
+                  alt="user"
+                  class="img-feed"
+                />
+                <p class="member-name">Peter Moor</p>
+                <p class="desc">Student of Web Desgin</p>
+                <div class="dots">
+                  <div class="dot">.</div>
+                  <div class="dot">.</div>
+                  <div class="dot active">.</div>
+                </div>
+              </div>
+              <!-- Khối phải -->
+              <div class="content-feed">
+                <div class="icon"><i class="fas fa-quote-left"></i></div>
+                <!-- blockquote: Là đoạn trích dẫn -->
+                <blockquote>
+                  Not only does my resume look impressive-filled with the names
+                  and logos of world-class insitutions-but these certificates
+                  also bring me closer to my career goals by validating the
+                  skills i've learned."
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ======features 1================= -->
+      <div class="feature">
+        <div class="main-content">
+          <!-- .body>.img>img*2^.content -->
+          <div class="body">
+            <div class="img">
+              <img class="lower" src="assets/img/learn1.avif" alt="learn1" />
+              <img src="assets/img/learn2.avif" alt="learn2" />
+            </div>
+            <div class="content">
+              <!-- .heading-lv2+.desc*2+button.btn -->
+              <h2 class="heading-lv2">
+                Learner outcomes through our awesome plat form
+              </h2>
+              <div class="desc">
+                87% of people learning for professional development report
+                career benefits like getting a promotion, a raise, or starting a
+                new career
+              </div>
+              <div class="desc">Lesson Impact Report (2022)</div>
+              <a href="#" class="btn btn-signup">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ======features 2================= -->
+      <div class="feature feature-2nd">
+        <div class="main-content">
+          <!-- .body>.img>img*2^.content -->
+          <div class="body">
+            <div class="img">
+              <img src="assets/img/learn3.avif" alt="learn3" />
+            </div>
+            <div class="content">
+              <!-- .heading-lv2+.desc*2+button.btn -->
+              <h2 class="heading-lv2">
+                Take the next step toward your personal and profestional goals
+                with lesson
+              </h2>
+              <p class="desc">
+                Take the next step toward Join now to receive personalized and
+                more recommendations from the full Coursera catalog
+              </p>
+              <a href="#" class="btn btn-signup">Join Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ==========blog========= -->
+      <div class="blogs">
+        <div class="main-content">
+          <div class="blog-top">
+            <h2 class="heading-lv2">Our blog</h2>
+            <p class="desc">
+              Read our regular travel blog and know the latest update of tour
+              and travel
+            </p>
+          </div>
+          <div class="blog-list">
+            <!-- Item 1 -->
+            <div class="blog-item">
+              <a href="#">
+                <img src="assets/img/study1.avif" alt="" class="img-thumb" />
+              </a>
+              <div class="content">
+                <p class="date">21 November 2021</p>
+                <h3 class="title">
+                  How to become a pro web designer in 2022 and get remot job?
+                </h3>
+                <a href="#" class="btn">Read more</a>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="blog-item">
+              <a href="#">
+                <img src="assets/img/study2.avif" alt="" class="img-thumb" />
+              </a>
+              <div class="content">
+                <p class="date">21 November 2021</p>
+                <h3 class="title">
+                  How to become a pro web designer in 2022 and get remot job?
+                </h3>
+                <a href="#" class="btn">Read more</a>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="blog-item">
+              <a href="#">
+                <img src="assets/img/study3.avif" alt="" class="img-thumb" />
+              </a>
+              <div class="content">
+                <p class="date">21 November 2021</p>
+                <h3 class="title">
+                  How to become a pro web designer in 2022 and get remot job?
+                </h3>
+                <a href="#" class="btn">Read more</a>
+              </div>
+            </div>
+          </div>
+          <div class="dots">
+            <div class="dot">.</div>
+            <div class="dot">.</div>
+            <div class="dot">.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- =======footer========== -->
+    <footer class="footer">
+      <div class="main-content">
+        <div class="row">
+          <!-- column 1 -->
+          <div class="column">
+            <a href="#">
+              <img
+                src="assets/img/reshot-icon-foursquare-TQ4W9MDN3L.svg"
+                width="30px"
+                alt="logo"
+                class="logo"
+            /></a>
+            <p class="desc">
+              Need to help for your dream Career? Let us. With Lesson, study
+              becomes easier & cut easier with us.
+            </p>
+            <div class="icon">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <!-- column 2 -->
+          <div class="column">
+            <h3 class="title">Company</h3>
+            <ul class="list">
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Features</a>
+              </li>
+              <li>
+                <a href="#">Our Pricing</a>
+              </li>
+              <li>
+                <a href="#">Latest News</a>
+              </li>
+            </ul>
+          </div>
+          <!-- column 3 -->
+          <div class="column">
+            <h3 class="title">Support</h3>
+            <ul class="list">
+              <li>
+                <a href="#">FAQs</a>
+              </li>
+              <li>
+                <a href="#">Terms & Conditions</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <!-- column 4 -->
+          <div class="column">
+            <h3 class="title">Address</h3>
+            <ul class="list">
+              <li>
+                <a href="#"
+                  ><strong>Location: </strong>27 Division St, New York, NY
+                  10002, USA</a
+                >
+              </li>
+              <li>
+                <a href="#"><strong>Email: </strong>email@gmail.com</a>
+              </li>
+              <li>
+                <a href="#"><strong>Phone: </strong>+ 000 123 456 7890</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="copy-right desc">
+          Copyright &#169;2023 webdesign.gdn. All rights reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

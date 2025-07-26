@@ -1,0 +1,683 @@
+/* Tạo biến sử dụng nhiều lần */
+:root {
+  --font-heading: "Sen", sans-serif;
+  --primary-color: rgb(255, 183, 0);
+}
+html {
+  font-size: 62.5%;
+  /* 1rem = 10px*/
+}
+body {
+  font-size: 1.6rem;
+  /* 16px */
+}
+/* ==========code dùng chung===================== */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  list-style-type: none;
+}
+.btn {
+  /* Chuyển đổi thành inline-block để xác dịnh chiều cao và rộng */
+  display: inline-block;
+  padding: 11px 26px;
+  background-color: #000;
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+  text-align: center;
+  /* Tất cả nút sẽ có chiều rộng tối thiểu của nút là 118px */
+  min-width: 118px;
+}
+/* Chiều rộng của tất cả là 1170px */
+.main-content {
+  width: 1170px;
+  /* Căn giữa */
+  margin: auto;
+  /* Tạo độ rộng 2 bên là 24px để khi co màn hình lại không bị tràn */
+  max-width: calc(100% - 48px);
+}
+.heading {
+  font-family: var(--font-heading);
+  font-size: 5.8rem;
+  line-height: 1.17;
+}
+.desc {
+  font-size: 1.8rem;
+  color: gray;
+  line-height: 1.67;
+  margin-top: 22px;
+}
+.heading-lv2 {
+  font-size: 3.8rem;
+  line-height: 1.27;
+}
+/* Tạo dấu 3 chấm khi nội dung quá dài, trên 1 hàng */
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  /* Ẩn nội dung bị tràn */
+  overflow: hidden;
+}
+/* Nếu sử dụng đồng thời 2 class này thì sẽ tạ dấu 3 chấm ở hàng thứ 2 khi text quá dài    */
+.line-clamp.line-2 {
+  -webkit-line-clamp: var(--line-clamp, 2);
+}
+/* 
+Class này giúp cho khi có 1 đoạn text có từ quá dài sẽ tràn làm hổng giao diện
+Nên tạo class này để khi chạm lề dù chữ không có khoảng trắng thì nó cũng tự chia đôi để cuống dòng 
+*/
+.break-all {
+  word-break: break-all;
+}
+.btn-signup {
+  min-width: 144px;
+}
+/* ==========================body-header============== */
+.header {
+  background-color: rgb(255, 228, 196);
+  /* z-index: 1 để cho những phần từ khác nằm dưới phần tử này */
+  z-index: 10;
+}
+/* Sẽ làm cho phần header navbar fixed cứng ở trình duyệt */
+/* CSS cho 1 phần tử vừa có class header vừa có class fixed */
+.header.fixed {
+  position: sticky;
+  /* 
+  Do .body-header có padding top là 36px
+  Mà ta chỉ muốn fixed ở 8px nên lấy -28px
+  */
+  top: -28px;
+}
+.header .body-header {
+  display: flex;
+  align-items: center;
+  /* Tạo padding trên dưới */
+  padding: 36px 0 8px 0;
+}
+.nav ul {
+  display: flex;
+}
+/* Căn phải khối nav, kéo luôn cả phần btn-cation bên phải  */
+.nav {
+  margin-left: auto;
+}
+.nav a {
+  color: gray;
+  font-size: 1.6rem;
+  padding: 8px 21px;
+}
+.nav a:hover {
+  color: black;
+  /* font-weight: 600; */
+  /* Dùng như vậy thì giao diện sẽ bị giật */
+  /* Nên dùng text shadow, không ảnh hưởng tới text xung quanh */
+  text-shadow: 1px 0 0 #000;
+}
+/* Tạo dấu gạch chân dùng ::before hoặc ::after */
+/* Tạo định vị cho thẻ cha */
+.nav li a {
+  position: relative;
+  /* Đặt định vị */
+}
+.nav li a::after {
+  /* Phải có content */
+  content: "";
+  width: 0%;
+  height: 2px;
+  /* Đặt định vị ăn theo thẻ cha li */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  transition: ease 1s;
+  border-radius: 50px;
+  /* Do nãy ở thẻ a tạo padding trái phải là 21px nên thụt trái vào 21px */
+  left: 21px;
+}
+.nav li a:hover::after {
+  /* Do padding trái phải là 21 nên lấy chiều rộng 100% - 42px 2 bên*/
+  width: calc(100% - 42px);
+}
+.header .btn-signup {
+  min-width: 144px;
+}
+.header .btn-signup:hover {
+  background-color: var(--primary-color);
+  transition: ease 0.5s;
+  color: #000;
+}
+.header .btn-action {
+  margin-left: 49px;
+}
+
+/* =================main=================== */
+.hero {
+  /* 
+  Nên tạo padding để nó có thể đổ màu nền 
+  margin không đổ được nền
+  */
+  padding: 56px 0 65px 0;
+  /* Do trừ đi padding bottom 8px của phần header */
+  background-color: rgba(255, 228, 196, 0.669);
+}
+.body-hero {
+  display: flex;
+}
+/* ========Trái=============== */
+.body-hero .media-block {
+  position: relative;
+  width: 48%;
+}
+.body-hero .media-block .img {
+  border-radius: 10px;
+  width: 470px;
+  height: 685px;
+  /* Cách làm không bị vỡ ảnh sử dụng oject-fit: cover */
+  object-fit: cover;
+}
+.body-hero .hero-sum {
+  position: absolute;
+  background-color: white;
+  right: 0;
+  bottom: 48px;
+  border-radius: 10px;
+  width: 270px;
+}
+.hero-sum {
+  padding: 24px;
+}
+.hero-sum .item {
+  display: flex;
+  align-items: center;
+}
+.hero-sum .item .icon {
+  /* width: 48px;
+  height: 48px; */
+  padding: 10px;
+  text-align: center;
+  align-content: center;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.hero-sum .item:nth-child(1) .icon {
+  background-color: rgb(255, 255, 164);
+  color: rgb(173, 173, 2);
+}
+.hero-sum .item:nth-child(2) .icon {
+  background-color: rgb(250, 150, 250);
+  color: purple;
+}
+.hero-sum .item:nth-child(3) .icon {
+  background-color: rgb(173, 249, 173);
+  color: green;
+}
+.hero-sum .item:nth-child(2),
+.hero-sum .item:nth-child(3) {
+  margin-top: 18px;
+}
+
+.hero-sum .info .label {
+  color: gray;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.hero-sum .info .title {
+  line-height: 1.2;
+  color: #000;
+  font-weight: 600;
+}
+/* ==========Phải============ */
+.body-hero .content-block {
+  width: 52%;
+  padding-top: 64px;
+  padding-left: 130px;
+}
+
+.content-block .desc-recent {
+  margin-top: 48px;
+}
+.content-block .cta-gr {
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+}
+.content-block .cta-gr .btn-seecourse {
+  background-color: var(--primary-color);
+  color: white;
+  min-width: 180px;
+  /* Dùng line-height để xét chiều cao */
+  line-height: 50px;
+}
+.content-block .cta-gr .btn-seecourse:hover {
+  color: var(--primary-color);
+  background-color: white;
+  transition: ease 0.5s;
+}
+.cta-gr .watch-video {
+  border: none;
+  /* Màu nền trong suốt */
+  background: transparent;
+  display: flex;
+  margin-left: 26px;
+  align-items: center;
+  cursor: pointer;
+}
+.cta-gr .watch-video .icon {
+  color: var(--primary-color);
+  background-color: aliceblue;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  align-content: center;
+  font-size: 1.8rem;
+  margin-right: 10px;
+}
+.cta-gr .watch-video .text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.content-block .desc-strong {
+  margin-top: 8px;
+}
+.content-block .desc-strong strong {
+  font-size: 3rem;
+  color: black;
+  font-family: var(--font-heading);
+  line-height: 1.23;
+  margin-right: 15px;
+}
+.content-block .desc-strong strong:nth-child(2) {
+  margin-left: 28px;
+}
+/* ================popular=============== */
+/* ================popular-top=============== */
+.popular {
+  margin-top: 135px;
+}
+.popular-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info {
+  width: 458px;
+}
+.desc-size {
+  font-size: 1.8rem;
+}
+/* .control {
+  width: 8%;
+} */
+.control .btn-control {
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 999px;
+}
+.control .btn-control:nth-child(2) {
+  margin-left: 10px;
+}
+.control .btn-control:active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: white;
+}
+/* ================popular-list=============== */
+.popular .popular-list {
+  margin-top: 55px;
+}
+.popular-list .course-list {
+  /* khoảng cách giữa các cột */
+  gap: 30px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.popular-list .course-item {
+  /* width: 30%; */
+  border-radius: 10px;
+  border: 1px solid rgb(200, 200, 200);
+  cursor: pointer;
+  /* 
+  Đặt flex: 1; để khi nội dung quá dài không làm vỡ giao diện ban đầu
+  3 item sẽ có tí lệ 1 1 như cũ
+  là cú pháp viết tắc của flex-grow flex-shrink flex-basic
+  */
+  flex: 1;
+}
+.popular-list .course-item:hover {
+  transition: ease 0.3s;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.1);
+}
+.popular-list .course-item .thumb {
+  object-fit: cover;
+  width: 100%;
+  height: 278px;
+  border-radius: 10px 10px 0px 0px;
+}
+.popular-list .info {
+  width: 100%;
+  padding: 16px 22px;
+}
+.popular-list .info .head {
+  display: flex;
+  justify-content: space-between;
+}
+.popular-list .info .head .rating {
+  color: var(--primary-color);
+}
+.popular-list .info .foot-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.popular-list .info .foot-info strong {
+  font-size: 2rem;
+}
+.popular-list .info .foot-info .btn {
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  background-color: #000;
+  color: white;
+}
+.popular-list .info .foot-info .btn:hover {
+  background-color: var(--primary-color);
+  transition: ease 0.5s;
+  color: #000;
+}
+.btn-booknow {
+  min-width: 144px;
+  padding: 16px 26px;
+}
+.info a {
+  color: #000;
+}
+/* =========feedback============== */
+.feeback {
+  margin-top: 135px;
+  padding: 96px 0px;
+  background-color: rgb(55, 24, 0);
+}
+.feeback .feedback-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.feeback .info-feedback .img-feed {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 999px;
+}
+.info-feedback .member-name {
+  color: white;
+  padding-top: 18px;
+  font-size: 2.4rem;
+  line-height: 1.42;
+}
+.info-feedback .desc {
+  margin-top: 4px;
+  line-height: 1.86;
+  font-size: 1.8rem;
+}
+.feeback .info-feedback .dots {
+  display: flex;
+}
+.feeback .info-feedback .dots .dot {
+  font-size: 8rem;
+  cursor: pointer;
+}
+/* .feeback .info-feedback .dots .active {
+  color: var(--primary-color);
+} */
+
+.feeback .info-feedback .dots .dot:active {
+  color: var(--primary-color);
+}
+.feeback .feedback-item .content-feed .icon {
+  font-size: 6rem;
+  color: rgb(160, 82, 0);
+  position: absolute;
+  top: -51px;
+  left: -63px;
+}
+.feeback .feedback-item .content-feed {
+  width: 60%;
+  position: relative;
+}
+.feeback .feedback-item .content-feed blockquote {
+  color: white;
+  font-size: 2.6rem;
+  line-height: 1.54;
+}
+/*
+Tạo thanh feedback lướt qua trái hoặc phải
+Có 3 item và chỉ hiện thị 1
+Cho 3 item nằm trên cùng 1 hàng
+*/
+.feeback .feedback-list {
+  display: flex;
+  overflow: hidden;
+}
+/* =========feature 1============= */
+.feature {
+  padding: 65px 0px;
+  margin-top: 135px;
+}
+.feature .body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.feature .body .img {
+  display: flex;
+  gap: 30px;
+}
+.feature .body .img img {
+  object-fit: cover;
+  border-radius: 16px;
+  width: 270px;
+  height: 404px;
+}
+.feature .lower {
+  margin-top: 34px;
+}
+.feature .content {
+  width: 41%;
+}
+.feature .btn-signup {
+  background-color: var(--primary-color);
+  margin-top: 20px;
+}
+.feature .btn-signup:hover {
+  background-color: #000;
+  transition: ease 0.5s;
+  color: var(--primary-color);
+}
+/* ========feature-2nd================ */
+.feature-2nd {
+  margin-top: 70px;
+}
+.feature-2nd .body {
+  flex-direction: row-reverse;
+}
+.feature-2nd .body .img img {
+  object-fit: cover;
+  border-radius: 16px;
+  width: 470px;
+  height: 440px;
+}
+.feature-2nd .body .content {
+  width: 49%;
+}
+/* =======blog====== */
+.blogs {
+  margin-top: 135px;
+  padding: 95px 0px;
+  background-color: rgb(255, 228, 196);
+}
+.blogs .blog-top {
+  text-align: center;
+}
+.blogs .blog-top .desc {
+  width: 448px;
+  margin: auto;
+}
+.blogs .blog-list {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+.blogs .blog-list .blog-item {
+  width: 30%;
+  border-radius: 0 0 10px 10px;
+  background-color: white;
+  border: 1px solid rgb(200, 200, 200);
+  cursor: pointer;
+}
+.blogs .blog-list .blog-item .content {
+  padding: 16px 22px;
+}
+.blogs .date {
+  font-size: 1.4rem;
+  color: gray;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #000; */
+  padding: 10px 0px;
+  position: relative;
+}
+.blogs .date::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--primary-color);
+  margin-right: 5px;
+}
+.blogs .date::after {
+  content: "";
+  width: 150px;
+  height: 2px;
+  display: inline-block;
+  background-color: gray;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px;
+  position: absolute;
+}
+.blogs .title {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  padding: 10px 0px;
+}
+.blogs .blog-list .img-thumb {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  height: 250px;
+}
+.blogs .blog-list .blog-item:hover {
+  transition: ease 0.3s;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.1);
+}
+.blogs .dots {
+  display: flex;
+  justify-content: center;
+}
+.blogs .dots .dot {
+  font-size: 8rem;
+  cursor: pointer;
+}
+.blogs .dots .dot:active {
+  color: var(--primary-color);
+}
+.blogs .btn {
+  margin-top: 14px;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.blogs .btn:hover {
+  background-color: #000;
+  transition: ease 0.5s;
+  color: var(--primary-color);
+}
+/* =======footer=========== */
+.footer {
+  background-color: #3c1602;
+  padding: 96px 135px;
+  padding-bottom: 28px;
+}
+.footer .row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 38px;
+}
+.footer .column {
+  width: 21.6%;
+}
+.footer .column:first-child {
+  width: 35%;
+}
+.footer .column .desc {
+  /* margin-top: 0; */
+  line-height: 1.72;
+  /* Đặt max-width để khi thuộc tính nhỏ hơn thì nó sẽ co lại */
+  max-width: 297px;
+}
+.footer .title {
+  color: white;
+  border-bottom: 1px solid gray;
+  display: inline-block;
+  padding: 0px 48px 14px 0px;
+}
+.footer .column .list {
+  margin-top: 28px;
+}
+.footer .column .list li a {
+  color: gray;
+  line-height: 1.86;
+}
+.footer .column .list li a strong {
+  color: white;
+  line-height: 1.72;
+}
+.footer .copy-right {
+  width: 100%;
+  text-align: center;
+  padding: 24px 0px 0px 0px;
+  border-top: 1px solid gray;
+}
+.footer .column .icon {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+}
+.footer .icon i {
+  color: white;
+}
+.footer .icon i:hover {
+  color: var(--primary-color);
+}
+.footer .column .list li a:hover {
+  color: var(--primary-color);
+}
+/* Đổi màu chữ khi bôi đen dòng text copy right */
+.footer .copy-right::selection {
+  color: var(--primary-color);
+}
